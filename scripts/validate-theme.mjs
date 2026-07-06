@@ -150,6 +150,7 @@ function validatePackagingFiles() {
   for (const pattern of [
     ".agents/**",
     ".claude/**",
+    ".github/**",
     "docs/**",
     "scripts/**",
     "install.sh",
