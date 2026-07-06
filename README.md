@@ -1,74 +1,59 @@
-# MySkills
+# Absolutely Theme
 
-AI Agent Skills 集合 —— 包含 35 个技能包（`.agents/skills/`）、Claude skill 目录（`.claude/skills/`）和协作协议（`AGENTS.md`）。
+Absolutely Theme is a VS Code-compatible color theme extension inspired by the Codex App `Absolutely` theme. It focuses on a warm, quiet light theme with low-contrast surfaces and restrained syntax colors, similar in feel to Claude Code-style coding interfaces.
 
-## 一键安装
+## Themes
 
-在任何目录下运行以下命令，即可将 skills 下载到当前目录：
+- **Absolutely Light**: the main theme, based on the Codex App light palette.
+- **Absolutely Dark**: a companion dark variant using the same accent and syntax language.
+
+## Palette
+
+| Role | Light | Dark |
+|------|-------|------|
+| Editor background | `#f9f9f7` | `#2d2d2b` |
+| Surface / sidebar | `#f4f4f2` | `#373735` |
+| Foreground | `#2d2d2b` | `#f9f9f7` |
+| Accent / cursor / link | `#cc7d5e` | `#cc7d5e` |
+| Comment | `#939391` | `#b2b2b0` |
+| String | `#00c853` | `#00c853` |
+| Keyword / number | `#ff5f38` | `#ff5f38` |
+| Type / class | `#bc7559` | `#d28e73` |
+| Diff added / git added | `#00c853` | `#00c853` |
+| Diff removed / git deleted | `#ff5f38` | `#ff5f38` |
+
+## Fidelity Notes
+
+The direct VS Code-compatible keys and TextMate token groups are locked to the extracted Codex App Absolutely bundle. VS Code-only keys such as `gitDecoration.*`, `diffEditor.*`, diagnostics, and terminal ANSI colors are derived from Codex's chrome seed: accent `#cc7d5e`, light ink `#2d2d2b`, dark ink `#f9f9f7`, added `#00c853`, removed `#ff5f38`, and skill/accent `#cc7d5e`.
+
+## Development
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/zixuandai0217/MySkills/main/install.sh | bash
+npm run validate
 ```
 
-## 安装到指定目录
+The validation script checks that the extension manifest contributes both themes and that the theme files keep the extracted Absolutely palette intact.
+
+## Package
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/zixuandai0217/MySkills/main/install.sh | bash -s -- /path/to/target
+npm run package
 ```
 
-## 工作原理
+This creates `absolutely-theme-0.1.0.vsix`, which can be installed in VS Code-family editors that support VSIX installation.
 
-安装脚本通过 **一次 HTTP 请求** 下载整个仓库的 tarball 归档，本地解压后提取所需文件。无需调用 GitHub API，不受速率限制，通常 10 秒内即可完成安装。
+## Install From VSIX
 
-- 仅需 `curl`（或 `wget`）+ `tar`，无其他依赖
-- 内置失败重试（最多 3 次）
-- 自动清理临时文件
+In VS Code, run this if the `code` command is available:
 
-## 安装内容
+```bash
+code --install-extension absolutely-theme-0.1.0.vsix
+```
 
-| 文件 | 说明 |
-|------|------|
-| `AGENTS.md` | Agent 协作与上下文优化协议 |
-| `.agents/skills/` | 35 个技能包（见下方列表） |
-| `.claude/skills/` | Claude Code 可用技能包；当前包含增强版 `drawio-skill` |
+On macOS, if `code` is not in your shell path, either use **Extensions: Install from VSIX...** from the Command Palette or run:
 
-## 技能包列表
+```bash
+"/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code" --install-extension absolutely-theme-0.1.0.vsix
+```
 
-| 技能包 | 用途 |
-|--------|------|
-| `algorithmic-art` | 算法艺术生成 |
-| `brainstorming` | 头脑风暴 |
-| `brand-guidelines` | 品牌规范 |
-| `canvas-design` | Canvas 设计 |
-| `dispatching-parallel-agents` | 并行 Agent 调度 |
-| `doc-coauthoring` | 文档协作 |
-| `docx` | Word 文档处理 |
-| `drawio-skill` | draw.io/diagrams.net 技术图、科研图、复刻图与导出 |
-| `executing-plans` | 计划执行 |
-| `finishing-a-development-branch` | 开发分支收尾 |
-| `frontend-design` | 前端设计 |
-| `humanizer` | 文本人性化润色 |
-| `internal-comms` | 内部沟通 |
-| `mcp-builder` | MCP Server 构建 |
-| `pdf` | PDF 文档处理 |
-| `pptx` | PowerPoint 演示文稿处理 |
-| `pua` | 执行力督导协议 |
-| `receiving-code-review` | 接收代码审查 |
-| `requesting-code-review` | 发起代码审查 |
-| `scientific-figure-making` | 科研图表制作 |
-| `skill-creator` | 技能包创建 |
-| `slack-gif-creator` | Slack GIF 制作 |
-| `subagent-driven-development` | 子 Agent 驱动开发 |
-| `systematic-debugging` | 系统化调试 |
-| `test-driven-development` | 测试驱动开发 |
-| `theme-factory` | 主题工厂 |
-| `ui-ux-pro-max` | UI/UX 专业设计 |
-| `using-git-worktrees` | Git Worktree 使用 |
-| `using-superpowers` | 超能力调度入口 |
-| `verification-before-completion` | 完成前验证 |
-| `web-artifacts-builder` | Web 产物构建 |
-| `webapp-testing` | Web 应用测试 |
-| `writing-plans` | 计划撰写 |
-| `writing-skills` | 写作技巧 |
-| `xlsx` | Excel 表格处理 |
-# Absolutely
+In CodeBuddy or another VS Code-like editor, use its extension manager's **Install from VSIX** action if available, then select **Absolutely Light** from the color theme picker.

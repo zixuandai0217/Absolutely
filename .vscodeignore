@@ -1,0 +1,13 @@
+.agents/**
+.claude/**
+docs/**
+scripts/**
+install.sh
+AGENTS.md
+.gitignore
+.vscodeignore
+*.js
+*.js.map
+*.vsix
+node_modules/**
+.DS_Store

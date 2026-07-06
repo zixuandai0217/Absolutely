@@ -1,0 +1,48 @@
+{
+  "name": "absolutely-theme",
+  "displayName": "Absolutely Theme",
+  "description": "A VS Code-compatible theme extension inspired by Codex App's Absolutely theme.",
+  "version": "0.1.0",
+  "publisher": "zixuandai0217",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zixuandai0217/Absolutely.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zixuandai0217/Absolutely/issues"
+  },
+  "homepage": "https://github.com/zixuandai0217/Absolutely#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "codex",
+    "absolutely",
+    "light theme",
+    "claude code"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Absolutely Light",
+        "uiTheme": "vs",
+        "path": "./themes/absolutely-light-color-theme.json"
+      },
+      {
+        "label": "Absolutely Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/absolutely-dark-color-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "validate": "node scripts/validate-theme.mjs",
+    "package": "npx --yes @vscode/vsce package --out absolutely-theme-0.1.0.vsix"
+  },
+  "devDependencies": {}
+}
