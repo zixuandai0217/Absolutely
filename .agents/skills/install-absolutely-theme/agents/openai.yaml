@@ -1,0 +1,4 @@
+interface:
+  display_name: "Install Absolutely Theme"
+  short_description: "Install the Absolutely Theme VSIX into VS Code-family editors."
+  default_prompt: "Install the Absolutely Theme extension into my VS Code-compatible editor and verify it is available."
