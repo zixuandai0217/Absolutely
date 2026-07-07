@@ -4,6 +4,7 @@
 .playwright-cli/**
 docs/**
 scripts/**
+icons/**
 install.sh
 AGENTS.md
 .gitignore

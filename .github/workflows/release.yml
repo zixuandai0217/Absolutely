@@ -41,7 +41,6 @@ jobs:
             echo "Absolutely Theme ${GITHUB_REF_NAME}"
             echo
             echo "- VS Code-compatible Absolutely Light and Absolutely Dark themes."
-            echo "- Absolutely Icons file icon theme is included in the VSIX."
             echo "- Codex App Absolutely source colors are locked by validation."
             echo "- VSIX package is attached below for local installation."
           } > release-notes.md

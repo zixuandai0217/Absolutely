@@ -15,7 +15,7 @@ import urllib.request
 from pathlib import Path
 
 REPOSITORY = "zixuandai0217/Absolutely"
-DEFAULT_VERSION = "v0.1.1"
+DEFAULT_VERSION = "v0.1.2"
 EXTENSION_ID = "zixuandai0217.absolutely-theme"
 
 EDITOR_CANDIDATES = {
@@ -52,7 +52,7 @@ def parse_args() -> argparse.Namespace:
         help="Target VS Code-compatible editor.",
     )
     parser.add_argument("--editor-cli", help="Explicit editor CLI path.")
-    parser.add_argument("--version", default=DEFAULT_VERSION, help="Release tag, for example v0.1.1.")
+    parser.add_argument("--version", default=DEFAULT_VERSION, help="Release tag, for example v0.1.2.")
     parser.add_argument("--vsix", help="Install a local VSIX instead of downloading from GitHub.")
     parser.add_argument("--extensions-dir", help="Optional temporary extensions directory.")
     parser.add_argument("--user-data-dir", help="Optional temporary user-data directory.")
