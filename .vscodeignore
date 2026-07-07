@@ -1,12 +1,12 @@
 .agents/**
 .claude/**
 .github/**
+.playwright-cli/**
 docs/**
 scripts/**
 install.sh
 AGENTS.md
 .gitignore
-.vscodeignore
 *.js
 *.js.map
 *.vsix

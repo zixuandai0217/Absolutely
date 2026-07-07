@@ -10,13 +10,16 @@ description: Use when installing, updating, verifying, or troubleshooting the Ab
 Install the Absolutely Theme extension from this project's GitHub Release into a VS Code-compatible editor, then verify the extension ID is present.
 
 Primary release asset:
-`https://github.com/zixuandai0217/Absolutely/releases/download/v0.1.0/absolutely-theme-0.1.0.vsix`
+`https://github.com/zixuandai0217/Absolutely/releases/download/v0.1.1/absolutely-theme-0.1.1.vsix`
 
 Extension ID:
 `zixuandai0217.absolutely-theme`
 
 Theme labels:
 `Absolutely Light`, `Absolutely Dark`
+
+File icon theme label:
+`Absolutely Icons`
 
 ## Workflow
 
@@ -32,11 +35,11 @@ python3 .agents/skills/install-absolutely-theme/scripts/install_absolutely_theme
 ```bash
 python3 .agents/skills/install-absolutely-theme/scripts/install_absolutely_theme.py \
   --editor codebuddy \
-  --vsix /path/to/absolutely-theme-0.1.0.vsix
+  --vsix /path/to/absolutely-theme-0.1.1.vsix
 ```
 
 4. Verify the script reports `zixuandai0217.absolutely-theme@...`.
-5. Tell the user to select `Absolutely Light` from the editor's color theme picker, unless they asked for the dark variant.
+5. Tell the user to select `Absolutely Light` from the editor's color theme picker, unless they asked for the dark variant. Also tell them to select `Absolutely Icons` from the file icon theme picker.
 
 ## Editor Selection
 
@@ -67,7 +70,7 @@ tmp_ext="$(mktemp -d)"
 tmp_user="$(mktemp -d)"
 python3 .agents/skills/install-absolutely-theme/scripts/install_absolutely_theme.py \
   --editor codebuddy \
-  --vsix ./absolutely-theme-0.1.0.vsix \
+  --vsix ./absolutely-theme-0.1.1.vsix \
   --extensions-dir "$tmp_ext" \
   --user-data-dir "$tmp_user"
 rm -rf "$tmp_ext" "$tmp_user"

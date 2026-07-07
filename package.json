@@ -1,8 +1,8 @@
 {
   "name": "absolutely-theme",
   "displayName": "Absolutely Theme",
-  "description": "A VS Code-compatible theme extension inspired by Codex App's Absolutely theme.",
-  "version": "0.1.0",
+  "description": "A VS Code-compatible color and file icon theme inspired by Codex App's Absolutely theme.",
+  "version": "0.1.1",
   "publisher": "zixuandai0217",
   "license": "MIT",
   "repository": {
@@ -21,6 +21,8 @@
   ],
   "keywords": [
     "theme",
+    "icons",
+    "icon-theme",
     "codex",
     "absolutely",
     "light theme",
@@ -38,11 +40,18 @@
         "uiTheme": "vs-dark",
         "path": "./themes/absolutely-dark-color-theme.json"
       }
+    ],
+    "iconThemes": [
+      {
+        "id": "absolutely-icons",
+        "label": "Absolutely Icons",
+        "path": "./icons/absolutely-icons.json"
+      }
     ]
   },
   "scripts": {
     "validate": "node scripts/validate-theme.mjs",
-    "package": "npx --yes @vscode/vsce package --out absolutely-theme-0.1.0.vsix"
+    "package": "npx --yes @vscode/vsce package --out absolutely-theme-${npm_package_version}.vsix"
   },
   "devDependencies": {}
 }

@@ -27,12 +27,21 @@ jobs:
       - name: Package VSIX
         run: npm run package
 
+      - name: Resolve VSIX asset
+        id: vsix
+        run: |
+          VERSION="$(node -p "require('./package.json').version")"
+          ASSET="absolutely-theme-${VERSION}.vsix"
+          test -f "$ASSET"
+          echo "asset=$ASSET" >> "$GITHUB_OUTPUT"
+
       - name: Write release notes
         run: |
           {
             echo "Absolutely Theme ${GITHUB_REF_NAME}"
             echo
             echo "- VS Code-compatible Absolutely Light and Absolutely Dark themes."
+            echo "- Absolutely Icons file icon theme is included in the VSIX."
             echo "- Codex App Absolutely source colors are locked by validation."
             echo "- VSIX package is attached below for local installation."
           } > release-notes.md
@@ -41,7 +50,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "${GITHUB_REF_NAME}" absolutely-theme-0.1.0.vsix \
+          gh release create "${GITHUB_REF_NAME}" "${{ steps.vsix.outputs.asset }}" \
             --repo "${GITHUB_REPOSITORY}" \
             --title "Absolutely Theme ${GITHUB_REF_NAME}" \
             --notes-file release-notes.md \
